@@ -1,8 +1,8 @@
 print ("hello,user")
 flag=True
 while flag: 
-    val_1=int(input("input val_1:"))
-    val_2=int(input("input val_2:"))
+    val_1=float(input("input val_1:"))
+    val_2=float(input("input val_2:"))
     command=input("input command:")
     if command=="+":
         print(val_1,"+",val_2,"=",val_1+val_2)
@@ -13,20 +13,22 @@ while flag:
     elif command=="/":
         print(val_1,"/",val_2,"=",val_1/val_2)
     else:
-        print("введен неверный символ!")    
-   
-    for i in range(1,4):
+        print("введен неверный символ!") 
+           
+    counter = 0
+    while True:
+        if counter ==3:
+            print ("Команда введена неверно 3 раза!Выполняю выход из программы...")
+            exit()
         command=input("Do you want to continue?(Y/N):")
-        if command=="N":
+        if command.upper() =="N":
             flag=False
             break 
-        elif command=="Y":
+        elif command.upper() =="Y":
             flag=True
             break 
-        if i==3:
-            print ("Команда введена неверно 3 раза!Выполняю выход из программы...")
-            flag=False
         else:
+            counter+=1
             print ("Введена неправильная команда!")
 print ("goodbye")       
     
