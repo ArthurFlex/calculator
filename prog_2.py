@@ -9,6 +9,10 @@ with open(r"C:\Users\User\.vscode\my programms\программы\conf.txt","r")
                 key=list0[0]
                 value=list0[1]
                 data[key]=value
+            if x==1:
+                key=list0[0].rstrip('\n')
+                value="Значение не задано"
+                data[key]=value
 while flag:
     try:
         key=input("Введите значение ключа:")  
