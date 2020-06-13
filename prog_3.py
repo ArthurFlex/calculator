@@ -295,24 +295,24 @@ class TranspositionMethod(MainClass):
 
     
 
-    
+   
 #метод гаммирования
 class GammaMethod(MainClass):
 
-    def gen_key(self, **kwargs):
+    def gen_key(self, **args):
         flag = True
-        error=0
+        er=0
         while flag:
             try:
                 gamma=0
                 while gamma < 2:
-                    gamma=int(input("Введите значение гаммы: "))
+                    gamma=int(input("Введите гамму: "))
                     if gamma < 2:
                         print("Слишком маленькое значение гаммы")
                 key_list = [i + 1 for i in range(gamma)]
                 random.shuffle(key_list)
                 key_file = open(self._made_file('key'),'x',encoding='utf-8')
-                key_file.write('шифр гаммирования\n')
+                key_file.write('шифр гамирования\n')
                 i=0
                 str0=''
                 while i < len(key_list):                   
@@ -321,18 +321,18 @@ class GammaMethod(MainClass):
                 str0 = str0.rstrip(' ')
                 key_file.write(str0)
                 flag == False
-                print("Ключ был успешно сохранен.")
+                print("\nУспешно")
                 break
             except ValueError:
                 print("Недопустимый символ")
-                error+=1
-                if error > 2:
-                    print("Совершены 3 ошибки ввода!Выполняю выход из программы...!")
+                er+=1
+                if er > 2:
+                    print("Слишком много ошибок")
                     flag = False
                     break
             except Exception:
-                print("Ошибка") 
-                
+                print("Возникла ошибка")
+
     def __read_key(self):
         key_file = open(self._open_key('шифр гамирования'),'r', encoding='utf-8')
         key_list = []
@@ -342,7 +342,7 @@ class GammaMethod(MainClass):
                 i+=1
             else:
                 key_list = line.split(' ')
-        return key_list, len(key_list) 
+        return key_list, len(key_list)
     
     def ciphering(self, **kwargs):
         text_list = self._open_text_file()
@@ -375,13 +375,13 @@ class GammaMethod(MainClass):
                             i+=1
                             k=0
                     cipher_file.write(str0)
-                    print("Текст был успешно преобразован!")
+                    print("\nУспешно")
                     flag1 = False
                     break
             except Exception:
-                print("Ошибка")       
+                print("Возникла ошибка")       
 
-    def deciphering(self, **kwargs):
+    def deciphering(self, **args):
         cipher_list = self.__read_cipher()
         key_list, gamma = self.__read_key()
         alph_list = self._open_alph()
@@ -390,7 +390,7 @@ class GammaMethod(MainClass):
         flag1 = True
         while flag1:
             try:
-                with open(self._made_file('txt'),'x', encoding='utf-8') as decipher_file:
+                with open(self._made_file('txt'),'x', encoding='utf-8') as deciphering_file:
                     i=0
                     k=0
                     str0=''
@@ -408,14 +408,14 @@ class GammaMethod(MainClass):
                             str0 = str0 + cipher_list[i]
                             i+=1
                             k=0
-                    decipher_file.write(str0)
-                    print("Текст был успешно преобразован!")
+                    deciphering_file.write(str0)
+                    print("\nУспешно")
                     flag1=False
                     break
             except Exception:
-                print("Ошибка")
+                print("Возникла ошибка")
 
-                                   
+                         
        
     def __read_cipher(self):
         cipher_file = open(self._open_cipher_text('шифр гаммирования'),'r', encoding='utf-8' )
@@ -428,6 +428,7 @@ class GammaMethod(MainClass):
                 cipher_list.extend(list(line))
         return cipher_list
 
+    
     
 
             
