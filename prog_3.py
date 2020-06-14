@@ -306,7 +306,7 @@ class GammaMethod(MainClass):
             try:
                 gamma=0
                 while gamma < 2:
-                    gamma=int(input("Введите гамму: "))
+                    gamma=int(input("Введите значение гаммы: "))
                     if gamma < 2:
                         print("Слишком маленькое значение гаммы")
                 key_list = [i + 1 for i in range(gamma)]
@@ -327,11 +327,11 @@ class GammaMethod(MainClass):
                 print("Недопустимый символ")
                 er+=1
                 if er > 2:
-                    print("Слишком много ошибок")
+                    print("Совершены 3 ошибки ввода!Выполняю выход из программы...!")
                     flag = False
                     break
             except Exception:
-                print("Возникла ошибка")
+                print("Ошибка")
 
     def __read_key(self):
         key_file = open(self._open_key('шифр гамирования'),'r', encoding='utf-8')
@@ -379,7 +379,7 @@ class GammaMethod(MainClass):
                     flag1 = False
                     break
             except Exception:
-                print("Возникла ошибка")       
+                print("Ошибка")       
 
     def deciphering(self, **args):
         cipher_list = self.__read_cipher()
@@ -413,7 +413,7 @@ class GammaMethod(MainClass):
                     flag1=False
                     break
             except Exception:
-                print("Возникла ошибка")
+                print("Ошибка")
 
                          
        
