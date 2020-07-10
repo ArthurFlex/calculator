@@ -1,0 +1,2 @@
+begin,end,time interval,login,mac ab,ULSK1,BRAS ip,start count,alive count,stop count,incoming,outcoming,error_count,code 0,code 1011,code 1100,code -3,code -52,code -42,code -21,code -40, code -44,code -46, code -38
+1588342294,1588424795,82501,AvHggH-W@pppoe,ec:cb:30:18:5f:dc,BR06231106500000642d25090509, 89.239.189.1,6,42,0,1482130814,35160657267,0,0,0,0,0,0,0,0,0,0,0,0
